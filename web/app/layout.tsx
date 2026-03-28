@@ -18,7 +18,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const baseAppId = process.env.NEXT_PUBLIC_BASE_APP_ID ?? "";
+/** base.dev app id — used for `<meta name="base:app_id" />` verification */
+const DEFAULT_BASE_APP_ID = "69c7c270480a9d8cb993add0";
+
+const baseAppId =
+  process.env.NEXT_PUBLIC_BASE_APP_ID?.trim() || DEFAULT_BASE_APP_ID;
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "";
 
 export const metadata: Metadata = {
@@ -29,7 +33,7 @@ export const metadata: Metadata = {
     icon: "/app-icon.png",
     apple: "/app-icon.png",
   },
-  other: baseAppId ? { "base:app_id": baseAppId } : {},
+  other: { "base:app_id": baseAppId },
 };
 
 export default async function RootLayout({
