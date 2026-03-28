@@ -9,5 +9,6 @@ Set in Vercel → Environment Variables (Production/Preview as needed):
 
 - `NEXT_PUBLIC_SITE_URL=https://bejeweled-teal.vercel.app`
 - `NEXT_PUBLIC_BASE_APP_ID=69c7c270480a9d8cb993add0` (also baked into `web/app/layout.tsx` as fallback for base.dev domain verification meta tag)
+- `NEXT_PUBLIC_BUILDER_CODE=bc_bnmw5ogz` (ERC-8021 attribution on check-in txs; see [Builder Codes](https://docs.base.org/base-chain/builder-codes/builder-codes))
 
 Pushing to `main` triggers a Vercel deployment when the project is connected to this repo.
